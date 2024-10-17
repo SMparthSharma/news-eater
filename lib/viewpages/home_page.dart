@@ -54,6 +54,24 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(fontSize: fontSize,fontWeight: FontWeight.bold),
                         );
                       },
+                    ),
+                    LayoutBuilder(
+                        builder:(context,constraints){
+                          final width=constraints.maxWidth;
+                          var fontSize = 16.0;
+                          if (width <= 480) {
+                          fontSize = 16.0;
+                          } else if (width > 480 && width <= 960) {
+                          fontSize = 22.0;
+                          } else {
+                          fontSize = 28.0;
+                          }
+                          return Text(
+                          'Syncing files to device Infinix X671B',
+                          //textAlign: TextAlign.start,
+                          style: TextStyle(fontSize: fontSize,fontWeight: FontWeight.bold),
+                          );
+                        }
                     )
                   ],
                 ),
