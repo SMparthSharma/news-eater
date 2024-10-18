@@ -72,7 +72,11 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(fontSize: fontSize,fontWeight: FontWeight.bold),
                           );
                         }
-                    )
+                    ),
+                    Spacer(),
+                    Align(
+                        alignment: Alignment.bottomRight,
+                        child: ElevatedButton(onPressed: (){}, child: Text("see all")))
                   ],
                 ),
               ),
