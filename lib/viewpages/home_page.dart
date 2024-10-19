@@ -74,9 +74,12 @@ class _HomePageState extends State<HomePage> {
                         }
                     ),
                     Spacer(),
-                    Align(
-                        alignment: Alignment.bottomRight,
-                        child: ElevatedButton(onPressed: (){}, child: Text("see all")))
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Align(
+                          alignment: Alignment.bottomRight,
+                          child: ElevatedButton(onPressed: (){}, child: Text("see all"))),
+                    )
                   ],
                 ),
               ),
