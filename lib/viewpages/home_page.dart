@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:news_eater/backend/api_fetch.dart';
 
-
+import 'package:news_eater/viewpages/constant.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -12,11 +13,16 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
+  void initState() {
+    ApiFetch.fetchNews();
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
     double Height = MediaQuery.of(context).size.height;
     double Width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor:kLightColor,
       body: SafeArea(
         child: PageView.builder(
           scrollDirection: Axis.vertical,
@@ -25,7 +31,7 @@ class _HomePageState extends State<HomePage> {
             return Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Colors.red,
+                  color: kPrimaryColor,
                   boxShadow: [BoxShadow(color: Colors.grey,spreadRadius: 5,
                     blurRadius: 7,
                     offset: Offset(0, 3),)]),
@@ -90,7 +96,9 @@ class _HomePageState extends State<HomePage> {
                     child: Align(
                         alignment: Alignment.bottomRight,
                         child: ElevatedButton(
-                            onPressed: () {}, child: Text("see all"))),
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(backgroundColor: kOrangeColor,foregroundColor: kLightColor),
+                            child: Text("see all",style: TextStyle(fontSize: 15),))),
                   )
                 ],
               ),
