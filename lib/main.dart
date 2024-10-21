@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:news_eater/viewpages/home_page.dart';
 
+
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const HomePage(),
+      home:  HomePage(),
     );
   }
 }
